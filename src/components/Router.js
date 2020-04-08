@@ -5,21 +5,19 @@ import {
     Redirect,
     Switch
 } from 'react-router-dom';
-import Home from '../routes/Home';
-import Everythings from "../routes/Everythings";
-import Search from "../routes/Search";
 import Header from "./Header";
+import KorRead from "../routes/Kor/KoreaContainer";
+import UsRead from "../routes/Us/UsContainer";
 
 export default () => (
     <Router>
         <>
             <Header />
             <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/everythings" exact component={Everythings} />
-                <Route path="/search" exact component={Search} />
-                <Redirect from="*" to="/" />
+                <Route path="/" exact component={KorRead} />
+                <Route path="/us" component={UsRead} />
+                <Redirect from="*" to ="/" />
             </Switch>
         </>
     </Router>
-)
+);
